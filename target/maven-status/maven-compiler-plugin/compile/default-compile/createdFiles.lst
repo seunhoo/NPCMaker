@@ -1,0 +1,8 @@
+org\npcmaker\Command\MainCommand.class
+org\npcmaker\Command\CommandManager.class
+org\npcmaker\module\PacketModule.class
+org\npcmaker\event\PlayerEvent.class
+org\npcmaker\Command\NpcCommand.class
+org\npcmaker\module\SkinModule.class
+org\npcmaker\event\EventManager.class
+org\npcmaker\NPCMaker.class
