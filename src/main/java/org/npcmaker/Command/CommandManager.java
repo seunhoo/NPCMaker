@@ -13,6 +13,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.craftbukkit.v1_20_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 import org.npcmaker.NPCMaker;
 
 
@@ -27,9 +28,9 @@ public class CommandManager implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command,  String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender,@NotNull Command command, String label, String[] args) {
         if(label.equals(NpcCommand.COMMAND_NM.getMessage())){
-            mainCommand.SpawnEntity((Player) sender);
+            mainCommand.SpawnEntity((Player) sender, args[0],args[1]);
         }
         return true;
     }

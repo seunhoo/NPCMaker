@@ -32,13 +32,13 @@ import java.util.UUID;
 public class MainCommand {
     PacketModule packetModule = new PacketModule();
     SkinModule skinModule = new SkinModule();
-    public void SpawnEntity(Player player){
+    public void SpawnEntity(Player player,String name , String skinName){
         Location location = player.getLocation();
         MinecraftServer minecraftServer = ((CraftServer) Bukkit.getServer()).getServer();
         ServerLevel serverLevel = ((CraftWorld) Objects.requireNonNull(location.getWorld())).getHandle();
-        GameProfile realWakgood = new GameProfile(UUID.randomUUID(), "RealWakgood");
-        skinModule.setSkin("RealWakgood",realWakgood);
-        skinModule.changeSkin("RealWakgood","RealWakgood" ,realWakgood);
+        GameProfile realWakgood = new GameProfile(UUID.randomUUID(), name);
+        skinModule.setSkin(skinName,realWakgood);
+        skinModule.changeSkin(skinName,skinName ,realWakgood);
         ServerPlayer serverPlayer = new ServerPlayer(minecraftServer, serverLevel, realWakgood, ClientInformation.createDefault());
         serverPlayer.setPos(location.getX(), location.getY(), location.getZ());
 
